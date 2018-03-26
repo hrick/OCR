@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/cameraLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/record_panel"
+            android:layout_alignParentTop="true" />
+
+        <RelativeLayout
+            android:id="@+id/record_panel"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="@color/black_overlay">
+
+            <com.github.florent37.camerafragment.widgets.RecordButton
+                android:id="@+id/record_button"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_centerInParent="true" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@+id/record_button"
+                android:orientation="horizontal">
+
+                <com.github.florent37.camerafragment.widgets.FlashSwitchView
+                    android:id="@+id/flash_switch_view"
+                    android:layout_width="35dp"
+                    android:layout_weight="1"
+                    android:paddingBottom="26dp"
+                    android:paddingTop="26dp"
+                    android:scaleType="fitCenter"
+                    android:paddingEnd="18dp"
+                    android:paddingStart="18dp"
+                    android:layout_height="match_parent" />
+
+                <ImageButton
+                    android:id="@+id/ibBancoLocalizacao"
+                    android:layout_width="35dp"
+                    android:layout_weight="1"
+                    android:paddingBottom="18dp"
+                    android:paddingTop="18dp"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:scaleType="fitCenter"
+                    android:layout_height="match_parent"
+                    android:background="@color/transparent"
+                    android:src="@drawable/ic_banco_localizacao" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/record_button"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/ibMenosZoom"
+                    android:layout_width="35dp"
+                    android:paddingBottom="18dp"
+                    android:paddingTop="18dp"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitCenter"
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    android:src="@drawable/magnify_minus_outline" />
+
+                <ImageButton
+                    android:scaleType="fitCenter"
+                    android:id="@+id/ibMaisZoom"
+                    android:paddingBottom="18dp"
+                    android:paddingTop="18dp"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:layout_width="35dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    android:src="@drawable/magnify_plus_outline" />
+
+
+            </LinearLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rvPreview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/ivPreview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/llAcoes"
+                android:layout_alignParentTop="true" />
+
+            <LinearLayout
+                android:id="@+id/llAcoes"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/black_overlay"
+                android:weightSum="2">
+
+                <Button
+                    android:id="@+id/btnCancelar"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_close_white"
+                    android:text="@string/cancel"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/btnConfirmar"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_check"
+                    android:text="@string/confirmar"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

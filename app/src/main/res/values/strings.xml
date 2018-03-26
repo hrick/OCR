@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">OCR</string>
+    <string name="cancel">Cancelar</string>
+    <string name="confirmar">Confirmar</string>
+</resources>
